@@ -71,61 +71,61 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
 
   return (
     <>
-    <View style={styles.form}>
-      <Text style={styles.title}>Yours Expense Details</Text>
-      <View style={styles.inputRow}>
+      <View style={styles.form}>
+        <Text style={styles.title}>Yours Expense Details</Text>
+        <View style={styles.inputRow}>
+          <Input
+            style={styles.rowInput}
+            label="Amount:"
+            invalid={!inputs.amount.isValid}
+            textInputConfig={{
+              keyboardType: "decimal-pad",
+              onChangeText: inputChangeHandler.bind(this, "amount"),
+              value: inputs.amount.value,
+            }}
+          />
+          <Input
+            style={styles.rowInput}
+            label="Date:"
+            invalid={!inputs.date.isValid}
+            textInputConfig={{
+              placeholder: "YYYY-MM-DD",
+              maxLength: 10,
+              onChangeText: inputChangeHandler.bind(this, "date"),
+              value: inputs.date.value,
+            }}
+          />
+          <Ionicons
+            name="today-outline"
+            size={20}
+            color={GlobalStyle.colors.gray500}
+            style={styles.iconStyle}
+            onPress={() => console.log("Date")}
+          />
+        </View>
         <Input
-          style={styles.rowInput}
-          label="Amount:"
-          invalid={!inputs.amount.isValid}
+          label="Description:"
+          invalid={!inputs.description.isValid}
           textInputConfig={{
-            keyboardType: "decimal-pad",
-            onChangeText: inputChangeHandler.bind(this, "amount"),
-            value: inputs.amount.value,
+            multiline: true,
+            onChangeText: inputChangeHandler.bind(this, "description"),
+            value: inputs.description.value,
           }}
         />
-        <Input
-          style={styles.rowInput}
-          label="Date:"
-          invalid={!inputs.date.isValid}
-          textInputConfig={{
-            placeholder: "YYYY-MM-DD",
-            maxLength: 10,
-            onChangeText: inputChangeHandler.bind(this, "date"),
-            value: inputs.date.value,
-          }}
-        />
-        <Ionicons
-          name="today-outline"
-          size={20}
-          color={GlobalStyle.colors.gray500}
-          style={{ position: "absolute", end: 1, padding: 10, bottom: 10 }}
-          onPress={()=> console.log("Date")}
-        />
+        {formIsInvalid && (
+          <Text style={styles.errorText}>
+            Input is Invalid - Please fill the details!
+          </Text>
+        )}
+        <View style={styles.buttons}>
+          <Button style={styles.button} mode="flat" onPress={onCancel}>
+            Cancel
+          </Button>
+          <Button style={styles.button} onPress={submitHandler}>
+            {submitButtonLabel}
+          </Button>
+        </View>
       </View>
-      <Input
-        label="Description:"
-        invalid={!inputs.description.isValid}
-        textInputConfig={{
-          multiline: true,
-          onChangeText: inputChangeHandler.bind(this, "description"),
-          value: inputs.description.value,
-        }}
-      />
-      {formIsInvalid && (
-        <Text style={styles.errorText}>
-          Input is Invalid - Please fill the details!
-        </Text>
-      )}
-      <View style={styles.buttons}>
-        <Button style={styles.button} mode="flat" onPress={onCancel}>
-          Cancel
-        </Button>
-        <Button style={styles.button} onPress={submitHandler}>
-          {submitButtonLabel}
-        </Button>
-      </View>
-    </View>
     </>
   );
 }
@@ -168,5 +168,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: GlobalStyle.colors.gray500,
+  },
+  iconStyle: {
+    position: "absolute",
+    end: 2,
+    padding: 8,
+    bottom: 10,
   },
 });
