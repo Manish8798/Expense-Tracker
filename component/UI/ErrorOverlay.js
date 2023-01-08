@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 24,
-    backgroundColor: GlobalStyle.colors.primary700,
+    backgroundColor: GlobalStyle.colors.white,
   },
   text: {
-    color: "white",
+    color: GlobalStyle.colors.gray700,
     textAlign: "center",
-    padding: 8,
+    padding: 10,
   },
   title: {
     fontSize: 20,

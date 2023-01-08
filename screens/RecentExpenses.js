@@ -18,7 +18,7 @@ function RecentExpenses() {
       setIsFetching(true);
       try {
         const expenses = await fetchExpense();
-        console.log("getExpenses", expenses);
+        // console.log("getExpenses", expenses);
         expenseCtx.setExpenses(expenses);
       } catch (error) {
         setError("Could not fetch expenses!");
@@ -40,7 +40,7 @@ function RecentExpenses() {
   const recentExpenses = expenseCtx.expenses.filter((expense) => {
     const today = new Date();
     const date7DaysAgo = getDateMinusDays(today, 7);
-
+    // console.log(expense.date >= date7DaysAgo && expense.date <= today);
     return expense.date >= date7DaysAgo && expense.date <= today;
   });
 

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: GlobalStyle.colors.primary100,
+    color: GlobalStyle.colors.gray700,
     marginBottom: 5,
   },
   input: {
