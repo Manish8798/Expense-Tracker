@@ -30,8 +30,8 @@ function ExpenseOverview() {
         tabBarActiveTintColor: GlobalStyle.colors.accent500,
         headerRight: ({ tintColor }) => (
           <IconButton
-            icon="add"
-            size={30}
+            icon="ios-add-outline"
+            size={25}
             color={tintColor}
             onPress={() => {
               navigation.navigate("ManageExpense");
