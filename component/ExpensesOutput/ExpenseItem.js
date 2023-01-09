@@ -19,7 +19,7 @@ function ExpenseItem({ id, description, amount, date }) {
       style={({ pressed }) => pressed && styles.pressed}
     >
       <View style={styles.expenseItem}>
-        <View>
+        <View style={styles.descContainer}>
           <Text style={[styles.textBase, styles.description]}>
             {description}
           </Text>
@@ -62,15 +62,19 @@ const styles = StyleSheet.create({
   amountContainer: {
     paddingHorizontal: 10,
     paddingVertical: 5,
-    backgroundColor: "white",
+    backgroundColor: GlobalStyle.colors.primary50,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
     minWidth: 75,
+    margin: 5,
   },
   amount: {
     color: GlobalStyle.colors.gray700,
     fontWeight: "bold",
-    fontSize: 15
+    fontSize: 15,
+  },
+  descContainer: {
+    width: "75%",
   },
 });
