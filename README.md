@@ -1,5 +1,5 @@
 # Expense-Tracker
-You can store your daily expense using this app.
+You can track your daily expenses using this app.
 I build this app using [Expo Cli](https://reactnative.dev/docs/environment-setup).
 
 In this mobile app user can Add, update and delete the expenses.
