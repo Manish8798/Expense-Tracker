@@ -95,13 +95,13 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
               value: inputs.date.value,
             }}
           />
-          <Ionicons
+          {/* <Ionicons
             name="today-outline"
             size={20}
             color={GlobalStyle.colors.gray500}
             style={styles.iconStyle}
             onPress={() => console.log("Date")}
-          />
+          /> */}
         </View>
         <Input
           label="Description:"
@@ -169,10 +169,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: GlobalStyle.colors.gray500,
   },
-  iconStyle: {
-    position: "absolute",
-    end: 2,
-    padding: 8,
-    bottom: 10,
-  },
+  iconStyle: {},
 });
